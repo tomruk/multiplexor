@@ -1,0 +1,34 @@
+listen:
+  - transport: tcp
+    address: 0.0.0.0:80
+
+  - transport: tcp
+    address: 0.0.0.0:443
+    tls:
+      enabled: true
+      cert: cert.pem
+      key: key.pem
+
+rules:
+  - transport: http
+    address: 127.0.0.1:22
+    match: ssh
+
+  - transport: tcp
+    address: 127.0.0.1:80
+    match: http
+    tls:
+      enabled: true
+      ignoreBadCert: true
+
+  - transport: tcp
+    address: 127.0.0.1:1080
+    match: socks4
+
+  - transport: tcp
+    address: 127.0.0.1:1081
+    match: socks5
+
+  - transport: udp
+    address: 127.0.0.1:1194
+    match: openvpn

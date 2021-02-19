@@ -1,0 +1,10 @@
+.vscode
+*.exe
+__debug_bin
+/server.yml
+/multiplexor-server
+/multiplexor-client
+/cmd/multiplexor-server/multiplexor-server
+/cmd/multiplexor-client/multiplexor-client
+cert.pem
+key.pem
